@@ -31,7 +31,7 @@ public class Application {
 		
 		JsonReader reader = null;
         try {
-            reader = new JsonReader(new FileReader("C:/Users/suemu/Documents/logfile.txt"));
+            reader = new JsonReader(new FileReader("src/main/resources/logfile.txt"));
             Gson gson = new GsonBuilder().create();
             reader.setLenient(true);
             Type listTypeRole = new TypeToken<List<Event>>() {}.getType();
