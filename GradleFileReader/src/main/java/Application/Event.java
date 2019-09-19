@@ -8,21 +8,31 @@ public class Event
 
     private String type;
 
-    private String timestamp;
+    private String duration;
     
     private String host;
+    
+    private boolean alert;
     
     public Event() {
     	super();
     }
     
-    public Event(String id, String state, String type, String timestamp, String host) {
+    public Event(String id, String state, String type, String duration, String host) {
 		super();
 		this.id = id;
 		this.state = state;
 		this.type = type;
-		this.timestamp = timestamp;
+		this.duration = duration;
 		this.host = host;
+	}
+    
+	public boolean isAlert() {
+		return alert;
+	}
+
+	public void setAlert(boolean alert) {
+		this.alert = alert;
 	}
 
 	public String getHost ()
@@ -65,19 +75,17 @@ public class Event
         this.type = type;
     }
 
-    public String getTimestamp ()
-    {
-        return timestamp;
-    }
+    public String getDuration() {
+		return duration;
+	}
 
-    public void setTimestamp (String timestamp)
-    {
-        this.timestamp = timestamp;
-    }
+	public void setDuration(String duration) {
+		this.duration = duration;
+	}
 
-    @Override
+	@Override
     public String toString()
     {
-        return "ClassPojo [host = "+host+", id = "+id+", state = "+state+", type = "+type+", timestamp = "+timestamp+"]";
+        return "ClassPojo [host = "+host+", id = "+id+", state = "+state+", type = "+type+", timestamp = "+duration+"]";
     }
 }
